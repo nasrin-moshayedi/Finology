@@ -1,7 +1,7 @@
 import React  from "react";
 import { Route, Switch } from 'react-router-dom';
 import "./Styles/main.scss";
-import AdminPanel from "./Components/AdminPanel";
+import AdminPanel from "./Pages/AdminPanel"
 
 class App extends React.Component {
   render() {

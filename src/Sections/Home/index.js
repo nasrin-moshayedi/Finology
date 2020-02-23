@@ -1,7 +1,7 @@
 import React from 'react';
-import Charts from "./Charts";
-import Steps from "./Steps";
-import Chart2 from "./Chart2";
+import Charts from "../../Components/Home/Charts";
+import Steps from "../../Components/Home/Steps";
+import Chart2 from "../../Components/Home/Chart2";
 
 class Home extends React.Component{
     constructor(props) {
