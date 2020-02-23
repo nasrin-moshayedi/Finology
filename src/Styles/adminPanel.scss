@@ -80,7 +80,8 @@
 .drawerOpen {
   position: relative;
   //top: 65px;
-  left: 0;
+  left: auto;
+  right: 0 !important ;
   width: 240px;
 }
 .drawerClose {
