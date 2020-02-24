@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { instance } from '../Axios';
+// import { instance } from '../Axios';
 import Toast from 'react-bootstrap/Toast';
 
 class RegisterDashboard extends Component {
