@@ -9,10 +9,11 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <AdminPanel/> */}
 
-        <RegisterDashboard />
+        <AdminPanel/>
+        {/* <RegisterDashboard /> */}
         {/* <LoginDashboard /> */}
+
       </React.Fragment>
 
 
