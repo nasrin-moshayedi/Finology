@@ -17,9 +17,6 @@ class AdminPanel extends React.Component {
                 <CssBaseline />
                 <Header />
                 <Sidbar />
-                <main className="content">
-                    <Home />
-                </main>
             </div>
         );
     }

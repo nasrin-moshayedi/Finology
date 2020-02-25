@@ -7,6 +7,34 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Typography from "@material-ui/core/Typography";
 import FolderIcon from '@material-ui/icons/Folder';
+import Home from "./Home";
+import {Link, Route} from "react-router-dom";
+import Chart2 from "../Components/Home/Chart2";
+import LoginDashboard from "../Pages/Login/LoginDashboard";
+import Charts from "../Components/Home/Charts";
+
+const dashboardFields = [
+    {
+        title: "داشبورد",
+        component: Home,
+        path: "/dashboard"
+    },
+    {
+        title: "مدیریت خدمات",
+        component: Chart2,
+        path: "/mana"
+    },
+    {
+        title: "مدیریت پروفایل",
+        component: LoginDashboard,
+        path: "/sss"
+    },
+    {
+        title: "Drafts",
+        component: Charts,
+        path: "/eee"
+    },
+];
 
 
 class Sidbar extends Component {
@@ -26,30 +54,32 @@ class Sidbar extends Component {
     };
     render() {
         return (
-          <React.Fragment>
-                        <Drawer
+            <React.Fragment>
+                <Drawer
                     variant="permanent"
                     className={["drawer", this.state.open ? "drawerOpen" : "drawerClose"].join(" ")}
                     classes={{ paper: [this.state.open ? "drawerOpen" : "drawerClose"].join(" ") }}
                 >
                     <List>
-                        {['داشبورد', 'مدیریت خدمات', 'مدیریت پروفایل', 'Drafts'].map((text, index) => (
-                            <ListItem button key={index}>
-                                <ListItemIcon>
-                                    <FolderIcon className="icon" />
-                                </ListItemIcon>
-                                <Typography variant="body1" component="p">
-                                    {text}
-                                </Typography>
-                                {/*<ListItemText primary={text} className="icon"/>*/}
-                            </ListItem>
+                        {dashboardFields.map((text, index) => (
+                            <Link to={text.path}>
+                                <ListItem button key={index}>
+                                    <ListItemIcon>
+                                        <FolderIcon className="icon" />
+                                    </ListItemIcon>
+                                    <Typography variant="body1" component="p">
+                                        {text.title}
+                                    </Typography>
+                                    {/*<ListItemText primary={text} className="icon"/>*/}
+                                </ListItem>
+                            </Link>
                         ))}
                         <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
                             <div className="d-flex justify-content-between align-items-center"
-                                style={{ width: "100%", fontSize: 13 }}>
+                                 style={{ width: "100%", fontSize: 13 }}>
                                 <Typography variant="body1" component="p">
                                     Dropdown
                                 </Typography>
@@ -85,10 +115,14 @@ class Sidbar extends Component {
                                 {/*<ListItemText primary={text} className="icon"/>*/}
                             </ListItem>
                         ))}
-
                     </List>
                 </Drawer>
-          </React.Fragment>
+                <main className="content">
+                    {dashboardFields.map((text, index) => (
+                        <Route path={text.path} component={text.component}/>
+                    ))}
+                </main>
+            </React.Fragment>
         );
     }
 }
