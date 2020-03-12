@@ -8,7 +8,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Typography from "@material-ui/core/Typography";
 import FolderIcon from '@material-ui/icons/Folder';
 import Home from "./Home";
-import {Link, Route} from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import Chart2 from "../Components/Home/Chart2";
 import LoginDashboard from "../Pages/Login/LoginDashboard";
 import Charts from "../Components/Home/Charts";
@@ -18,22 +18,7 @@ const dashboardFields = [
         title: "داشبورد",
         component: Home,
         path: "/dashboard"
-    },
-    {
-        title: "مدیریت خدمات",
-        component: Chart2,
-        path: "/mana"
-    },
-    {
-        title: "مدیریت پروفایل",
-        component: LoginDashboard,
-        path: "/sss"
-    },
-    {
-        title: "Drafts",
-        component: Charts,
-        path: "/eee"
-    },
+    }
 ];
 
 
@@ -61,6 +46,9 @@ class Sidbar extends Component {
                     classes={{ paper: [this.state.open ? "drawerOpen" : "drawerClose"].join(" ") }}
                 >
                     <List>
+
+
+
                         {dashboardFields.map((text, index) => (
                             <Link to={text.path}>
                                 <ListItem button key={index}>
@@ -74,22 +62,25 @@ class Sidbar extends Component {
                                 </ListItem>
                             </Link>
                         ))}
+
+
+
+
                         <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
                             <div className="d-flex justify-content-between align-items-center"
-                                 style={{ width: "100%", fontSize: 13 }}>
+                                style={{ width: "100%", fontSize: 13 }}>
                                 <Typography variant="body1" component="p">
-                                    Dropdown
+                                    صفحات
                                 </Typography>
                                 <i className="fa fa-caret-down"></i>
                             </div>
-
                         </ListItem>
                         <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
                             <List>
-                                {['Dashboard', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                                {['ورود', 'ثبت نام', 'صفحه 404', 'پروفایل کاربری'].map((text, index) => (
                                     <ListItem button key={index}>
                                         <ListItemIcon>
                                             <FolderIcon className="icon" />
@@ -102,24 +93,132 @@ class Sidbar extends Component {
                                 ))}
                             </List>
                         </ListItem>
-                    </List>
-                    <List>
-                        {['Dashboard', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                            <ListItem button key={index}>
-                                <ListItemIcon>
-                                    <FolderIcon className="icon" />
-                                </ListItemIcon>
+
+
+
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                            <ListItemIcon>
+                                <InboxIcon className="icon" />
+                            </ListItemIcon>
+                            <div className="d-flex justify-content-between align-items-center"
+                                style={{ width: "100%", fontSize: 13 }}>
                                 <Typography variant="body1" component="p">
-                                    {text}
+                                    نمودارها
                                 </Typography>
-                                {/*<ListItemText primary={text} className="icon"/>*/}
-                            </ListItem>
-                        ))}
+                                <i className="fa fa-caret-down"></i>
+                            </div>
+                        </ListItem>
+                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                            <List>
+                                {['نمودار1', ' نمودار2', 'نمودار3'].map((text, index) => (
+                                    <ListItem button key={index}>
+                                        <ListItemIcon>
+                                            <FolderIcon className="icon" />
+                                        </ListItemIcon>
+                                        <Typography variant="body1" component="p">
+                                            {text}
+                                        </Typography>
+                                        {/*<ListItemText primary={text} className="icon"/>*/}
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </ListItem>
+
+
+
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                            <ListItemIcon>
+                                <InboxIcon className="icon" />
+                            </ListItemIcon>
+                            <div className="d-flex justify-content-between align-items-center"
+                                style={{ width: "100%", fontSize: 13 }}>
+                                <Typography variant="body1" component="p">
+                                    ویژگیهای رابط کاربری
+                                </Typography>
+                                <i className="fa fa-caret-down"></i>
+                            </div>
+                        </ListItem>
+                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                            <List>
+                                {['دکمه ها', 'آیکونها'].map((text, index) => (
+                                    <ListItem button key={index}>
+                                        <ListItemIcon>
+                                            <FolderIcon className="icon" />
+                                        </ListItemIcon>
+                                        <Typography variant="body1" component="p">
+                                            {text}
+                                        </Typography>
+                                        {/*<ListItemText primary={text} className="icon"/>*/}
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </ListItem>
+
+
+
+
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                            <ListItemIcon>
+                                <InboxIcon className="icon" />
+                            </ListItemIcon>
+                            <div className="d-flex justify-content-between align-items-center"
+                                style={{ width: "100%", fontSize: 13 }}>
+                                <Typography variant="body1" component="p">
+                                 عناصر هوشمند
+                                </Typography>
+                                <i className="fa fa-caret-down"></i>
+                            </div>
+                        </ListItem>
+                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                            <List>
+                                {['اسلایدرها', 'آپلود', 'ترکرها'].map((text, index) => (
+                                    <ListItem button key={index}>
+                                        <ListItemIcon>
+                                            <FolderIcon className="icon" />
+                                        </ListItemIcon>
+                                        <Typography variant="body1" component="p">
+                                            {text}
+                                        </Typography>
+                                        {/*<ListItemText primary={text} className="icon"/>*/}
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </ListItem>
+
+
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                            <ListItemIcon>
+                                <InboxIcon className="icon" />
+                            </ListItemIcon>
+                            <div className="d-flex justify-content-between align-items-center"
+                                style={{ width: "100%", fontSize: 13 }}>
+                                <Typography variant="body1" component="p">
+                               نمونه ها
+                                </Typography>
+                                <i className="fa fa-caret-down"></i>
+                            </div>
+                        </ListItem>
+                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                            <List>
+                                {['دمو1', 'دمو2', 'دمو3'].map((text, index) => (
+                                    <ListItem button key={index}>
+                                        <ListItemIcon>
+                                            <FolderIcon className="icon" />
+                                        </ListItemIcon>
+                                        <Typography variant="body1" component="p">
+                                            {text}
+                                        </Typography>
+                                        {/*<ListItemText primary={text} className="icon"/>*/}
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </ListItem>
+
                     </List>
                 </Drawer>
                 <main className="content">
                     {dashboardFields.map((text, index) => (
-                        <Route path={text.path} component={text.component}/>
+                        <Route path={text.path} component={text.component} />
                     ))}
                 </main>
             </React.Fragment>
