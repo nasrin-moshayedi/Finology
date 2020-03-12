@@ -80,7 +80,7 @@ class Sidbar extends Component {
                         </ListItem>
                         <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
                             <List>
-                                {['ورود', 'ثبت نام', 'صفحه 404', 'پروفایل کاربری','فراموشی رمز'].map((text, index) => (
+                                {['ورود', 'ثبت نام', 'صفحه 404', 'صفحه 500', 'پروفایل کاربری','فراموشی رمز','نتایج جستجو','جدول قیمتها'].map((text, index) => (
                                     <ListItem button key={index}>
                                         <ListItemIcon>
                                             <FolderIcon className="icon" />
@@ -171,7 +171,7 @@ class Sidbar extends Component {
                         </ListItem>
                         <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
                             <List>
-                                {['اسلایدرها', 'آپلود', 'ترکرها','ادیتورhtml','تقویم فارسی'].map((text, index) => (
+                                {['اسلایدرها', 'آپلود', 'ترکرها','ادیتورhtml','تقویم فارسی','هشدارها'].map((text, index) => (
                                     <ListItem button key={index}>
                                         <ListItemIcon>
                                             <FolderIcon className="icon" />
