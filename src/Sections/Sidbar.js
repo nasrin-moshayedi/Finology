@@ -7,7 +7,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Typography from "@material-ui/core/Typography";
 import FolderIcon from '@material-ui/icons/Folder';
+
+
 import Home from "./Home";
+import Demo1 from '../Pages/Demos/Demo1';
+
 import { Link, Route } from "react-router-dom";
 import Chart2 from "../Components/Home/Chart2";
 import LoginDashboard from "../Pages/Login/LoginDashboard";
@@ -18,6 +22,11 @@ const dashboardFields = [
         title: "داشبورد",
         component: Home,
         path: "/dashboard"
+    },
+    {
+        title: "دمو1",
+        component: Demo1,
+        path: "/Demos/Demo1"
     }
 ];
 
