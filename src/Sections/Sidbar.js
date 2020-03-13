@@ -26,17 +26,49 @@ class Sidbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            openBtnClick: false,
+            openBtnClick1: false,
+            openBtnClick2: false,
+            openBtnClick3: false,
+            openBtnClick4: false,
+            openBtnClick5: false,
             open: true
         }
     }
 
-    openBtn = () => {
-        this.setState({ openBtnClick: true })
+    openBtn1 = () => {
+        this.setState({ openBtnClick1: true })
     };
-    closeBtn = () => {
-        this.setState({ openBtnClick: false })
+    openBtn2 = () => {
+        this.setState({ openBtnClick2: true })
     };
+    openBtn3 = () => {
+        this.setState({ openBtnClick3: true })
+    };
+    openBtn4 = () => {
+        this.setState({ openBtnClick4: true })
+    };
+    openBtn5 = () => {
+        this.setState({ openBtnClick5: true })
+    };
+
+
+    closeBtn1 = () => {
+        this.setState({ openBtnClick1: false })
+    };
+    closeBtn2 = () => {
+        this.setState({ openBtnClick2: false })
+    };
+    closeBtn3 = () => {
+        this.setState({ openBtnClick3: false })
+    };
+    closeBtn4 = () => {
+        this.setState({ openBtnClick4: false })
+    };
+    closeBtn5 = () => {
+        this.setState({ openBtnClick5: false })
+    };
+
+
     render() {
         return (
             <React.Fragment>
@@ -66,7 +98,7 @@ class Sidbar extends Component {
 
 
 
-                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick1 ? this.closeBtn1 : this.openBtn1}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
@@ -78,9 +110,9 @@ class Sidbar extends Component {
                                 <i className="fa fa-caret-down"></i>
                             </div>
                         </ListItem>
-                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                        <ListItem button className={["", this.state.openBtnClick1 ? "d-block" : "d-none"].join(" ")}>
                             <List>
-                                {['ورود', 'ثبت نام', 'صفحه 404', 'صفحه 500', 'پروفایل کاربری','فراموشی رمز','نتایج جستجو','جدول قیمتها'].map((text, index) => (
+                                {['ورود', 'ثبت نام', 'صفحه 404', 'صفحه 500', 'پروفایل کاربری', 'فراموشی رمز', 'نتایج جستجو', 'جدول قیمتها'].map((text, index) => (
                                     <ListItem button key={index}>
                                         <ListItemIcon>
                                             <FolderIcon className="icon" />
@@ -96,7 +128,7 @@ class Sidbar extends Component {
 
 
 
-                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick2 ? this.closeBtn2 : this.openBtn2}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
@@ -108,7 +140,7 @@ class Sidbar extends Component {
                                 <i className="fa fa-caret-down"></i>
                             </div>
                         </ListItem>
-                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                        <ListItem button className={["", this.state.openBtnClick2 ? "d-block" : "d-none"].join(" ")}>
                             <List>
                                 {['نمودار1', ' نمودار2', 'نمودار3'].map((text, index) => (
                                     <ListItem button key={index}>
@@ -126,7 +158,7 @@ class Sidbar extends Component {
 
 
 
-                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick3 ? this.closeBtn3 : this.openBtn3}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
@@ -138,9 +170,9 @@ class Sidbar extends Component {
                                 <i className="fa fa-caret-down"></i>
                             </div>
                         </ListItem>
-                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                        <ListItem button className={["", this.state.openBtnClick3 ? "d-block" : "d-none"].join(" ")}>
                             <List>
-                                {['دکمه ها', 'آیکونها','نوتیفیکیشن','مودالها','گریدبندی'].map((text, index) => (
+                                {['دکمه ها', 'آیکونها', 'نوتیفیکیشن', 'مودالها', 'گریدبندی'].map((text, index) => (
                                     <ListItem button key={index}>
                                         <ListItemIcon>
                                             <FolderIcon className="icon" />
@@ -157,21 +189,21 @@ class Sidbar extends Component {
 
 
 
-                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick4 ? this.closeBtn4 : this.openBtn4}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
                             <div className="d-flex justify-content-between align-items-center"
                                 style={{ width: "100%", fontSize: 13 }}>
                                 <Typography variant="body1" component="p">
-                                 عناصر هوشمند
+                                    عناصر هوشمند
                                 </Typography>
                                 <i className="fa fa-caret-down"></i>
                             </div>
                         </ListItem>
-                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                        <ListItem button className={["", this.state.openBtnClick4 ? "d-block" : "d-none"].join(" ")}>
                             <List>
-                                {['اسلایدرها', 'آپلود', 'ترکرها','ادیتورhtml','تقویم فارسی','هشدارها'].map((text, index) => (
+                                {['اسلایدرها', 'آپلود', 'ترکرها', 'ادیتورhtml', 'تقویم فارسی', 'هشدارها'].map((text, index) => (
                                     <ListItem button key={index}>
                                         <ListItemIcon>
                                             <FolderIcon className="icon" />
@@ -186,19 +218,19 @@ class Sidbar extends Component {
                         </ListItem>
 
 
-                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick ? this.closeBtn : this.openBtn}>
+                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick5 ? this.closeBtn5 : this.openBtn5}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
                             </ListItemIcon>
                             <div className="d-flex justify-content-between align-items-center"
                                 style={{ width: "100%", fontSize: 13 }}>
                                 <Typography variant="body1" component="p">
-                               نمونه ها
+                                    نمونه ها
                                 </Typography>
                                 <i className="fa fa-caret-down"></i>
                             </div>
                         </ListItem>
-                        <ListItem button className={["", this.state.openBtnClick ? "d-block" : "d-none"].join(" ")}>
+                        <ListItem button className={["", this.state.openBtnClick5 ? "d-block" : "d-none"].join(" ")}>
                             <List>
                                 {['دمو1', 'دمو2', 'دمو3'].map((text, index) => (
                                     <ListItem button key={index}>
