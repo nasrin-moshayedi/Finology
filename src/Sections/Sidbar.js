@@ -7,27 +7,111 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Typography from "@material-ui/core/Typography";
 import FolderIcon from '@material-ui/icons/Folder';
-
-
 import Home from "./Home";
 import Demo1 from '../Pages/Demos/Demo1';
+import Notfound from "./../Pages/404/Notfound";
 
 import { Link, Route } from "react-router-dom";
-import Chart2 from "../Components/Home/Chart2";
-import LoginDashboard from "../Pages/Login/LoginDashboard";
-import Charts from "../Components/Home/Charts";
+import Chart1 from "../Pages/Charts/Chart1";
+import Chart3 from "../Pages/Charts/Chart3";
+import Chart2 from "../Pages/Charts/Chart2";
 
 const dashboardFields = [
     {
         title: "داشبورد",
         component: Home,
-        path: "/dashboard"
+        path: "/dashboard",
+        subMenu: false
     },
     {
         title: "دمو1",
         component: Demo1,
-        path: "/Demos/Demo1"
-    }
+        path: "/Demos/Demo1",
+        subMenu: false
+    },
+    {
+        title: "صفحات",
+        component: null,
+        path: "/Demos/Demo1",
+        subMenu: true,
+        subMenuList:[
+            {
+                title: "Login",
+                component: Notfound,
+                path: "/Demos/NotFound1",
+                subMenu: false,
+            },
+            {
+                title: "SignUp",
+                component: Demo1,
+                path: "/Demos/Demo2",
+                subMenu: false,
+            },
+            {
+                title: "Page 404",
+                component: Notfound,
+                path: "/Demos/NotFound2",
+                subMenu: false,
+            },
+            {
+                title: "Page 500",
+                component: Demo1,
+                path: "/Demos/Demo3",
+                subMenu: false,
+            },
+            {
+                title: "Profile",
+                component: Notfound,
+                path: "/Demos/NotFound3",
+                subMenu: false,
+            },
+            {
+                title: "Forget Password",
+                component: Demo1,
+                path: "/Demos/Demo4",
+                subMenu: false,
+            },
+            {
+                title: "Search",
+                component: Notfound,
+                path: "/Demos/NotFound4",
+                subMenu: false,
+            },
+            {
+                title: "Products Table",
+                component: Demo1,
+                path: "/Demos/Demo5",
+                subMenu: false,
+            },
+        ]
+    },
+    {
+        title: "Charts",
+        component: null,
+        path: "/Charts/Chart1",
+        subMenu: true,
+        subMenuList:[
+            {
+                title: "Chart1",
+                component: Chart1,
+                path: "/Charts/Chart1",
+                subMenu: false,
+            },
+            {
+                title: "Chart2",
+                component: Chart2,
+                path: "/Charts/Chart2",
+                subMenu: false,
+            },
+            {
+                title: "Chart3",
+                component: Chart3,
+                path: "/Charts/Chart3",
+                subMenu: false,
+            }
+        ]
+    },
+
 ];
 
 
@@ -35,48 +119,18 @@ class Sidbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            openBtnClick1: false,
-            openBtnClick2: false,
-            openBtnClick3: false,
-            openBtnClick4: false,
-            openBtnClick5: false,
+            openBtnClick: false,
             open: true
         }
     }
 
-    openBtn1 = () => {
-        this.setState({ openBtnClick1: true })
-    };
-    openBtn2 = () => {
-        this.setState({ openBtnClick2: true })
-    };
-    openBtn3 = () => {
-        this.setState({ openBtnClick3: true })
-    };
-    openBtn4 = () => {
-        this.setState({ openBtnClick4: true })
-    };
-    openBtn5 = () => {
-        this.setState({ openBtnClick5: true })
+    openBtn = () => {
+        this.setState({ openBtnClick: true })
     };
 
-
-    closeBtn1 = () => {
-        this.setState({ openBtnClick1: false })
+    closeBtn = () => {
+        this.setState({ openBtnClick: false })
     };
-    closeBtn2 = () => {
-        this.setState({ openBtnClick2: false })
-    };
-    closeBtn3 = () => {
-        this.setState({ openBtnClick3: false })
-    };
-    closeBtn4 = () => {
-        this.setState({ openBtnClick4: false })
-    };
-    closeBtn5 = () => {
-        this.setState({ openBtnClick5: false })
-    };
-
 
     render() {
         return (
@@ -87,56 +141,46 @@ class Sidbar extends Component {
                     classes={{ paper: [this.state.open ? "drawerOpen" : "drawerClose"].join(" ") }}
                 >
                     <List>
-
-
-
                         {dashboardFields.map((text, index) => (
-                            <Link to={text.path}>
-                                <ListItem button key={index}>
+                            <React.Fragment>
+                            <Link to={text.path} onClick={() => this.setState({openBtnClick: text.title})}>
+                                <ListItem className={text.subMenu && "dropdown-btn"} onClick={this.state.openBtnClick === text.title ? this.closeBtn : this.openBtn}>
                                     <ListItemIcon>
-                                        <FolderIcon className="icon" />
+                                        <InboxIcon className="icon" />
                                     </ListItemIcon>
-                                    <Typography variant="body1" component="p">
-                                        {text.title}
+                                    <Typography variant="body1" component="p" className="d-flex justify-content-between align-items-center"
+                                                style={{ width: "100%", fontSize: 13 }}>
+                                            <Typography variant="body1" component="p">
+                                                {text.title}
+
+                                            </Typography>
+                                            <i className={["fa fa-caret-down", text.subMenu ? "d-block" : "d-none"].join(" ")}></i>
                                     </Typography>
-                                    {/*<ListItemText primary={text} className="icon"/>*/}
                                 </ListItem>
                             </Link>
+                                {text.subMenu &&
+
+                                <ListItem
+                                          className={["", this.state.openBtnClick === text.title ? "d-block" : "d-none"].join(" ")}>
+                                    <List>
+                                        {text.subMenuList.map((item, index) => (
+                                            <Link to={item.path}>
+                                                <ListItem button key={index}>
+                                                    <ListItemIcon>
+                                                        <FolderIcon className="icon"/>
+                                                    </ListItemIcon>
+                                                    <Typography variant="body1" component="p">
+                                                        {item.title}
+                                                    </Typography>
+                                                </ListItem>
+                                            </Link>
+
+                                        ))}
+                                    </List>
+                                </ListItem>
+                                }
+                            </React.Fragment>
                         ))}
-
-
-
-
-                        <ListItem className="dropdown-btn" onClick={this.state.openBtnClick1 ? this.closeBtn1 : this.openBtn1}>
-                            <ListItemIcon>
-                                <InboxIcon className="icon" />
-                            </ListItemIcon>
-                            <div className="d-flex justify-content-between align-items-center"
-                                style={{ width: "100%", fontSize: 13 }}>
-                                <Typography variant="body1" component="p">
-                                    صفحات
-                                </Typography>
-                                <i className="fa fa-caret-down"></i>
-                            </div>
-                        </ListItem>
-                        <ListItem button className={["", this.state.openBtnClick1 ? "d-block" : "d-none"].join(" ")}>
-                            <List>
-                                {['ورود', 'ثبت نام', 'صفحه 404', 'صفحه 500', 'پروفایل کاربری', 'فراموشی رمز', 'نتایج جستجو', 'جدول قیمتها'].map((text, index) => (
-                                    <ListItem button key={index}>
-                                        <ListItemIcon>
-                                            <FolderIcon className="icon" />
-                                        </ListItemIcon>
-                                        <Typography variant="body1" component="p">
-                                            {text}
-                                        </Typography>
-                                        {/*<ListItemText primary={text} className="icon"/>*/}
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </ListItem>
-
-
-
                         <ListItem className="dropdown-btn" onClick={this.state.openBtnClick2 ? this.closeBtn2 : this.openBtn2}>
                             <ListItemIcon>
                                 <InboxIcon className="icon" />
@@ -259,7 +303,16 @@ class Sidbar extends Component {
                 </Drawer>
                 <main className="content">
                     {dashboardFields.map((text, index) => (
-                        <Route path={text.path} component={text.component} />
+                        <span>
+                             <Route path={text.path} component={text.component} />
+                           {text.subMenu &&
+                               text.subMenuList.map((item, index) => {
+                                   return (
+                                           <Route path={item.path} component={item.component} />
+                                       )
+                               })
+                           }
+                        </span>
                     ))}
                 </main>
             </React.Fragment>

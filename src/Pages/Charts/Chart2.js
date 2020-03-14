@@ -1,10 +1,10 @@
-import React, { Component } from './node_modules/react';
+import React, { Component } from 'react';
 
 class Chart2 extends Component {
     render() {
         return (
             <div>
-                
+                car
             </div>
         );
     }
