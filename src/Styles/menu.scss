@@ -1,19 +1,13 @@
 .menu-container {
   background: #efefef;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 11;
   .menu-height {
     height: 80px;
   }
-  .links {
-    text-decoration: none;
-    padding: .5rem;
-    color: rgb(105, 105, 105);
-  }
-  .links:hover {
-    background-color: #000;
-    color: #f5f5f5!important;
-    padding: .5rem;
-    border-radius: 30px;
-  }
+
   .cart {
     text-decoration: none;
     padding: .5rem;
@@ -26,4 +20,16 @@
   .cart:hover {
     background-color: rgba(0, 0, 0, 0.04);
   }
+}
+.links {
+  text-decoration: none;
+  padding: .5rem;
+  color: rgb(105, 105, 105);
+  border-radius: 30px!important;
+}
+.links:hover {
+  background-color: #000!important;
+  color: #f5f5f5!important;
+  padding: .5rem;
+  border-radius: 30px;
 }

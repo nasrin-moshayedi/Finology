@@ -7,9 +7,9 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 function Menu() {
     return (
         <div className="menu-container">
-            <div className="menu-height container d-flex align-items-center justify-content-between">
+            <div className="menu-height container-fluid d-flex align-items-center justify-content-between" style={{padding: "0 50px"}}>
                 <div>
-                    <img src={logo} />
+                    <img src={logo}  alt="logo"/>
                 </div>
                 <div className="d-flex align-items-center">
                     <Link to="/reservation" className="mx-2 links">Reservation</Link>
@@ -20,11 +20,11 @@ function Menu() {
                     <Link to="/cart" className="mx-2 cart" ><ShoppingBasketIcon className="cart-icon"/></Link>
                     <Switch>
                         <Route path="/cart" render={() => console.log("cart")}/>
-                        <Route path="/login" component={() => console.log("login")}></Route>
-                        <Route path="/signup" component={() => console.log("signup")}></Route>
-                        <Route path="/reservation" component={() => console.log("reservation")}></Route>
-                        <Route path="/orders" component={() => console.log("orders")}></Route>
-                        <Route path="/location" component={() => console.log("location")}></Route>
+                        <Route path="/login" component={() => console.log("login")}/>
+                        <Route path="/signup" component={() => console.log("signup")}/>
+                        <Route path="/reservation" component={() => console.log("reservation")}/>
+                        <Route path="/orders" component={() => console.log("orders")}/>
+                        <Route path="/location" component={() => console.log("location")}/>
                     </Switch>
                 </div>
             </div>
