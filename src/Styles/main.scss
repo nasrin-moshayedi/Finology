@@ -1,6 +1,59 @@
-body {
-  background: #f5f5f5;
+a {
+  text-decoration: none;
+  color: #696969!important;
 }
-.App {
-  color: red;
+a:hover {
+  text-decoration: none!important;
+  color: #696969;
+}
+.line {
+  -webkit-transition: left .5s cubic-bezier(.74,0,.35,.96);
+  transition: left .5s cubic-bezier(.74,0,.35,.96);
+  position: absolute;
+  left: 50px;
+  width: 30px;
+  margin-top: 6px;
+  height: 3px;
+  background-color: #000;
+  opacity: .9;
+}
+.ldTBTR {
+  right: -17px!important;
+  background: #026764!important;
+  height: 50px!important;
+  width: 50px!important;
+  border-radius: 50% !important;
+  align-items: center;
+  top: 50% !important;
+  color: #fff;
+  font-size: 33px;
+  vertical-align: middle;
+}
+
+.hzJOec {
+  left: -15px!important;
+  background: #026764!important;
+  height: 50px!important;
+  width: 50px!important;
+  border-radius: 50% !important;
+  align-items: center;
+  top: 50% !important;
+  color: #fff;
+  font-size: 33px;
+  vertical-align: middle;
+}
+.p-re {
+  padding: 0 50px!important;
+}
+@media only screen and (max-width: 992px) {
+  .p-re {
+    padding: 0 20px!important;
+  }
+}
+button:focus {
+  outline: none!important;
+}
+.bg-black {
+  background: #000;
+
 }

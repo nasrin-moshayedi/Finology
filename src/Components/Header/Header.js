@@ -2,7 +2,7 @@ import React from "react";
 import HeaderImage from "./../../Images/HomeHeader.jpg";
 import "./../../Styles/header.scss";
 import Grid from "@material-ui/core/Grid";
-import Test from "../Carousel/Carousel";
+import Test from "../Public/Carousel/Carousel";
 import {Button} from "@material-ui/core";
 
 function Header() {
@@ -26,7 +26,6 @@ function Header() {
                         </div>
                     </Grid>
                 </div>
-
             </div>
         </div>
 
