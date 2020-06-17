@@ -1,0 +1,12 @@
+.header-container {
+  height: 480px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  //height: 100%;
+  img {
+    object-fit: cover;
+  }
+}
