@@ -1,11 +1,11 @@
 import React from "react";
 import "./Styles/main.scss";
-
+import Menu from "./Components/Menu/Menu";
 class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        Hello
+        <Menu/>
       </React.Fragment>
 
 
