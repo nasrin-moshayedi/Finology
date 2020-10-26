@@ -55,7 +55,7 @@ module.exports = {
     plugins:[
         new HWP(
             {
-                title: 'Opeqe',
+                title: 'Finology',
                 template: "./public/index.html"
             }
         )

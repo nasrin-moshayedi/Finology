@@ -1,3 +1,9 @@
+@import "Platte.scss";
+@import "break-points.scss";
+
+body {
+  font-family: Nunito, serif;
+}
 a {
   text-decoration: none;
   color: #696969!important;
@@ -6,54 +12,166 @@ a:hover {
   text-decoration: none!important;
   color: #696969;
 }
-.line {
-  -webkit-transition: left .5s cubic-bezier(.74,0,.35,.96);
-  transition: left .5s cubic-bezier(.74,0,.35,.96);
-  position: absolute;
-  left: 50px;
-  width: 30px;
-  margin-top: 6px;
-  height: 3px;
-  background-color: #000;
-  opacity: .9;
-}
-.ldTBTR {
-  right: -17px!important;
-  background: #026764!important;
-  height: 50px!important;
-  width: 50px!important;
-  border-radius: 50% !important;
-  align-items: center;
-  top: 50% !important;
-  color: #fff;
-  font-size: 33px;
-  vertical-align: middle;
-}
 
-.hzJOec {
-  left: -15px!important;
-  background: #026764!important;
-  height: 50px!important;
-  width: 50px!important;
-  border-radius: 50% !important;
-  align-items: center;
-  top: 50% !important;
-  color: #fff;
-  font-size: 33px;
-  vertical-align: middle;
-}
-.p-re {
-  padding: 0 50px!important;
-}
-@media only screen and (max-width: 992px) {
-  .p-re {
-    padding: 0 20px!important;
-  }
-}
 button:focus {
   outline: none!important;
 }
-.bg-black {
-  background: #000;
+
+.blue-bg {
+  background: $main_color;
+}
+
+.z-index {
+  z-index: 1;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.header-position {
+  margin-bottom: 90px;
+  padding-top: 90px;
+  @media only screen and (max-width: $md-point) {
+    padding-top: 125px;
+  }
+}
+
+.sub-banner-1 {
+  top: 140px;
+  left: -50px;
+  width: 550px;
+  @media only screen and (max-width: $sm-point) {
+    width: 445px!important;
+  }
+  @media only screen and (max-width: $md-point) and (min-width: $sm-point) {
+    width: 300px;
+  }
+  @media only screen and (max-width: $lg-point) and (min-width: $md-point) {
+    width: 445px;
+  }
+}
+.sub-banner-2 {
+  top: 105px;
+  right: -135px;
+  width: 300px;
+  @media only screen and (max-width: $sm-point) {
+    top: 300px;
+    right: -120px;
+    width: 225px;
+  }
+  @media only screen and (max-width: $md-point) and (min-width: $sm-point) {
+    right: -115px;
+    width: 195px;
+  }
+  @media only screen and (max-width: $lg-point) and (min-width: $md-point) {
+    width: 260px;
+  }
+}
+.banner {
+  position: relative;
+  top: 85px;
+  width: 560px;
+  @media only screen and (max-width: $sm-point) {
+    top: 60px;
+  }
+  @media only screen and (max-width: $md-point) and (min-width: $sm-point) {
+    top: 50px;
+  }
+  @media only screen and (max-width: $lg-point) and (min-width: $md-point) {
+    top: 70px;
+  }
+}
+
+.light-text {
+  color: $light-purple;
+}
+
+.blue-text {
+  color: $main_color;
+}
+
+.title {
+  @media only screen and (max-width: $md-point) {
+    font-size: 1.5rem;
+  }
+}
+
+.sub-title {
+  @media only screen and (max-width: $md-point) {
+    font-size: 13px;
+  }
+}
+.InfiniteCarousel {
+  padding-bottom: 50px;
+  .InfiniteCarouselFrame {
+    height: 155px;
+  }
+  .InfiniteCarouselArrow {
+    display: none!important;
+  }
+}
+.medium-text {
+  font-size: 90%;
+}
+
+.heart-icon {
+  color: rgb(255, 255, 255);
+  background: #fe0302;
+  padding: 13px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 4px 0 #fe030259;
+  width: 55px!important;
+  height: 55px!important;
+}
+
+.next-icon {
+  background: #eedeff;
+  svg {
+    color: #8251bc;
+    font-size: 45px;
+  }
+  button {
+    color: #8251bc;
+  }
+}
+.next-icon-size {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.smile-face {
+  color: $white;
+  background: #ff00b8;
+  padding: 13px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 4px 0 #ff00b859;
+}
+
+.yellow-btn {
+  background: #fffede;
+  button {
+    color: #ffc120;
+  }
+}
+
+.light-grey-text {
+  color: $light-grey;
+}
+.dark-grey-text {
+  color: $dark-grey;
+}
+.new-column {
+  width: 17%;
+  @media only screen and (max-width: $md-point) and (min-width: $sm-point) {
+    width: 30%;
+  }
+  @media only screen and (max-width: $sm-point) and (min-width: $xs-point) {
+    width: 50%;
+  }
+  @media only screen and (max-width: $xs-point) {
+    width: auto;
+  }
 
 }
